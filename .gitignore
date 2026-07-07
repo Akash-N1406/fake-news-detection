@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (large files -- reproducible from src/ scripts, not tracked in git)
+data/*.csv
+!data/.gitkeep
+
+# Kaggle credentials -- never commit this
+kaggle.json
+
+# OS/editor cruft
+.DS_Store
+.vscode/
+*.swp
+
+# Model artifacts (Week 2 onward -- can be large)
+models/*.h5
+models/*.pkl
+models/*.joblib
