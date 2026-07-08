@@ -23,6 +23,18 @@ import pandas as pd
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, "..", "data")
 
+# Reuters wire-service dateline, e.g. "WASHINGTON (Reuters) - " or
+# "WASHINGTON/HAVANA (Reuters) - ". Nearly all Real articles in this dataset
+# carry this prefix (99.8% contain "Reuters" somewhere) while almost no Fake
+# articles do -- left in, a model could hit ~99% accuracy just by detecting
+# this token instead of learning genuine fake-vs-real language patterns.
+# Stripped here so classification reflects actual content, not source metadata.
+DATELINE_RE = re.compile(r"^\s*[A-Z][A-Za-z\.,/'\-\s]*?\(Reuters\)\s*-\s*|^\s*\(Reuters\)\s*-\s*")
+
+
+def strip_dateline(text: str) -> str:
+    return DATELINE_RE.sub("", text, count=1)
+
 # Hand-curated stopword list (common English function words that carry
 # little discriminative signal for this classification task). Built manually
 # rather than imported, per spec.
@@ -43,6 +55,7 @@ do does did doing have has had having
 will would shall should may might must
 who which what whom whose
 s t d ll m o re ve y
+reuters
 """.split())
 
 # Extremely short tokens (1-2 chars) after cleaning are almost never
@@ -70,6 +83,7 @@ def remove_stopwords(tokens: list) -> list:
 
 
 def process_row(text: str) -> list:
+    text = strip_dateline(text)
     cleaned = clean_text(text)
     tokens = tokenize(cleaned)
     tokens = remove_stopwords(tokens)
