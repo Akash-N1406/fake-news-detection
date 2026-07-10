@@ -1,0 +1,40 @@
+[
+  {
+    "feature_set": "tfidf",
+    "k": 11,
+    "accuracy": 0.8224323274187282,
+    "precision": 0.7335693737552555,
+    "recall": 0.9520390580126364,
+    "f1": 0.8286464191976003,
+    "confusion_matrix": [
+      [
+        3035,
+        1204
+      ],
+      [
+        167,
+        3315
+      ]
+    ],
+    "train_predict_time_sec": 6.3
+  },
+  {
+    "feature_set": "embeddings",
+    "k": 11,
+    "accuracy": 0.9458619349825153,
+    "precision": 0.9642424242424242,
+    "recall": 0.9138426191843768,
+    "f1": 0.9383662636390445,
+    "confusion_matrix": [
+      [
+        4121,
+        118
+      ],
+      [
+        300,
+        3182
+      ]
+    ],
+    "train_predict_time_sec": 3.25
+  }
+]
