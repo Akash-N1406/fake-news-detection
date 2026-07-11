@@ -1,0 +1,59 @@
+[
+  {
+    "feature_set": "bow",
+    "C": 0.1,
+    "accuracy": 0.9825152182359798,
+    "precision": 0.9863411798895669,
+    "recall": 0.9747271682940839,
+    "f1": 0.9804997833309259,
+    "confusion_matrix": [
+      [
+        4192,
+        47
+      ],
+      [
+        88,
+        3394
+      ]
+    ],
+    "train_predict_time_sec": 0.62
+  },
+  {
+    "feature_set": "tfidf",
+    "C": 10.0,
+    "accuracy": 0.9835513534516255,
+    "precision": 0.9889245118041388,
+    "recall": 0.9744399770246984,
+    "f1": 0.9816288152755678,
+    "confusion_matrix": [
+      [
+        4201,
+        38
+      ],
+      [
+        89,
+        3393
+      ]
+    ],
+    "train_predict_time_sec": 0.21
+  },
+  {
+    "feature_set": "embeddings",
+    "C": 10.0,
+    "accuracy": 0.966584639295428,
+    "precision": 0.9683323649041256,
+    "recall": 0.9572085008615738,
+    "f1": 0.962738301559792,
+    "confusion_matrix": [
+      [
+        4130,
+        109
+      ],
+      [
+        149,
+        3333
+      ]
+    ],
+    "train_predict_time_sec": 0.79
+  }
+]
