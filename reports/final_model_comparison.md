@@ -1,0 +1,10 @@
+# Final Model Comparison
+
+| Model               | Type           | Feature Set   |   Test Accuracy |   Test Precision |   Test Recall |   Test F1 |   CV/Robustness Acc Mean |   CV/Robustness Acc Std |
+|:--------------------|:---------------|:--------------|----------------:|-----------------:|--------------:|----------:|-------------------------:|------------------------:|
+| KNN                 | Non-Parametric | embeddings    |           94.59 |            96.42 |         91.38 |     93.84 |                    94.26 |                    0.29 |
+| Logistic Regression | Parametric     | tfidf         |           98.36 |            98.89 |         97.44 |     98.16 |                    98.1  |                    0.11 |
+| Random Forest       | Ensemble       | tfidf         |           98.01 |            99.29 |         96.27 |     97.75 |                    97.55 |                    0.18 |
+| Neural Network      | Deep Learning  | tfidf         |           98.17 |            98.21 |         97.73 |     97.97 |                    98.21 |                    0.04 |
+
+*All values in %. CV/Robustness column: k-fold CV for KNN/LogReg/RF, repeated-seed runs for Neural Network.*
