@@ -1,0 +1,18 @@
+{
+  "KNN": {
+    "roc_auc": 0.9866464867205711,
+    "average_precision": 0.9834401870947468
+  },
+  "Logistic Regression": {
+    "roc_auc": 0.9984599800083983,
+    "average_precision": 0.9982994507734709
+  },
+  "Random Forest": {
+    "roc_auc": 0.9980431495566658,
+    "average_precision": 0.9978347687754119
+  },
+  "Neural Network": {
+    "roc_auc": 0.997763309137181,
+    "average_precision": 0.9976414316209576
+  }
+}
