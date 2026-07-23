@@ -45,6 +45,7 @@ Left unaddressed, either would have let models "cheat" via source formatting rat
 ```
 fake-news-detection/
 ├── data/                   # Fake.csv, True.csv (download from Kaggle) + derived feature files
+├── notebooks/              # Jupyter notebooks for viewing and model checking
 ├── src/                    # Pipeline scripts, day1 through day16 (run in order)
 ├── reports/                # Result JSONs, figures, report sections, final report + presentation
 ├── requirements.txt
@@ -121,6 +122,13 @@ Each script reads its inputs from `data/` or `reports/` and writes its outputs t
 - **Logistic Regression** (parametric) — best overall model, fastest to train
 - **Random Forest** (ensemble) — strong precision, more conservative recall
 - **Neural Network** (deep learning, TensorFlow/Keras) — competitive but did not exceed Logistic Regression
+
+## Notebooks
+
+- **`notebooks/01_project_walkthrough.ipynb`** — narrative tour of the dataset, EDA, feature engineering, and final results. Reads already-generated data/figures rather than re-running the slow steps (Word2Vec training, Random Forest tuning).
+- **`notebooks/02_model_inference_and_checking.ipynb`** — retrains the best model (Logistic Regression on TF-IDF, trains in under a second) and lets you classify your own text, spot-check test-set predictions, and inspect misclassified examples directly.
+
+Both notebooks import directly from `src/` (e.g., `day2_clean_tokenize.process_row`, `day7_consolidate_features.load_feature_set`) rather than duplicating logic, so they always stay consistent with the actual pipeline.
 
 ## Deliverables
 
